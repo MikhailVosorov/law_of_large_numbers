@@ -1,0 +1,77 @@
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import random as rand
+import numpy as np
+
+iq_people = np.random.normal(0, 1, 10000000)
+for i in range(len(iq_people)):
+    iq_people[i] = iq_people[i] ** 2
+
+# выведем результат с помощью гистограммы
+plt.figure(figsize=(10, 20))
+
+# зададим 18 интервалов (bin) и уровень прозрачности графиков
+plt.hist(iq_people, 100, alpha=0.5, label='Коэффицент интеллекта')
+plt.show()
+
+'''
+result = {}
+one = 0
+zero = 0
+for i in range(1, 10**6 + 1):
+    exp = rand.randint(0, 1)
+    if exp == 0:
+        zero += 1
+    else:
+        one += 1
+    result[i] = one / i
+df = pd.DataFrame(list(result.items()), columns=['exp', 'percentage'])
+sns.lineplot(data=df, x="exp", y="percentage")
+plt.show()
+'''
+'''
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""Visualize C_0.99 for all languages except the 10 with most characters."""
+
+import seaborn as sns
+import matplotlib.pyplot as plt
+
+l = [41, 44, 46, 46, 47, 47, 48, 48, 49, 51, 52, 53, 53, 53, 53, 55, 55, 55,
+     55, 56, 56, 56, 56, 56, 56, 57, 57, 57, 57, 57, 57, 57, 57, 58, 58, 58,
+     58, 59, 59, 59, 59, 59, 59, 59, 59, 60, 60, 60, 60, 60, 60, 60, 60, 61,
+     61, 61, 61, 61, 61, 61, 61, 61, 61, 61, 62, 62, 62, 62, 62, 62, 62, 62,
+     62, 63, 63, 63, 63, 63, 63, 63, 63, 63, 64, 64, 64, 64, 64, 64, 64, 65,
+     65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 65, 66, 66, 66, 66, 66, 66, 66,
+     67, 67, 67, 67, 67, 67, 67, 67, 68, 68, 68, 68, 68, 69, 69, 69, 70, 70,
+     70, 70, 71, 71, 71, 71, 71, 72, 72, 72, 72, 73, 73, 73, 73, 73, 73, 73,
+     74, 74, 74, 74, 74, 75, 75, 75, 76, 77, 77, 78, 78, 79, 79, 79, 79, 80,
+     80, 80, 80, 81, 81, 81, 81, 83, 84, 84, 85, 86, 86, 86, 86, 87, 87, 87,
+     87, 87, 88, 90, 90, 90, 90, 90, 90, 91, 91, 91, 91, 91, 91, 91, 91, 92,
+     92, 93, 93, 93, 94, 95, 95, 96, 98, 98, 99, 100, 102, 104, 105, 107, 108,
+     109, 110, 110, 113, 113, 115, 116, 118, 119, 121]
+
+sns.distplot(l, kde=True, rug=False)
+
+plt.show()
+'''
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+from scipy. stats import chi2
+
+#x-axis ranges from 0 to 20 with .001 steps
+x = np.arange (0, 100, 0.001)
+
+#define multiple Chi-square distributions
+
+plt.plot (x, chi2. pdf (x, df=20), label='df: 100')
+
+#add legend to plot
+plt.legend()
+
+plt.show()
